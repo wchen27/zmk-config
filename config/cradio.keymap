@@ -10,6 +10,23 @@
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        
+        // "iop" -> backspace
+        combo_iop {
+            timeout-ms = <50>;
+            key-positions = <7 8 9>;
+            bindings = <&kp BSPC>;
+        };
+        // "jkl" -> enter
+        combo_jkl {
+            timeout-ms = <50>;
+            key-positions = <16 17 18>;
+            bindings = <&kp ENTER>;
+        };
+    };
+
     behaviors {
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
