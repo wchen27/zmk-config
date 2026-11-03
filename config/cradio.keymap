@@ -53,11 +53,12 @@
             quick-tap-ms = <125>;
             bindings = <&mo>, <&kp>;
         };
-        // Space/Nav. Balanced, because rolling from Space into a letter is normal typing.
+        // Space/Nav. Only a full hold opens Nav. Letters pressed sooner stay letters, because a
+        // letter landing inside a Space press is normal fast typing.
         sp_nav: space_nav {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
             require-prior-idle-ms = <100>;
             quick-tap-ms = <150>;
